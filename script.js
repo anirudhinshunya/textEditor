@@ -127,8 +127,8 @@ class Model {
     constructor(model, view) {
       this.model = model
       this.view = view
-
-      this.onSchemaChanged(this.model.Schema)
+        if(localStorage.getItem("Schema"))
+        this.onSchemaChanged(this.model.Schema)
       this.view.bindAddSchema(this.handleAddSchema)
       this.model.bindSchemaChanged(this.onSchemaChanged)
     }
